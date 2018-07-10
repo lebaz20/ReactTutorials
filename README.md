@@ -1,4 +1,4 @@
-# ReduxCasts
+# ReactTutorials
 
 Completed code examples from [Modern React with Redux](https://udemy.com/react-redux)
 
