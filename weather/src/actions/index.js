@@ -1,16 +1,21 @@
-import axios from "axios";
+import fetch from 'cross-fetch';
 
-const API_KEY = "6a78596d062df78380eff5944c4e5567";
-const ROOT_URL = `http://api.openweathermap.org/data/2.5/forecast?appid=${API_KEY}`;
+const API_KEY = 'd325cad0331793fd3da96c94b5161278';
+const ROOT_URL = 'http://api.openweathermap.org/data/2.5/forecast';
 
-export const FETCH_WEATHER = "FETCH_WEATHER";
+export const FETCH_WEATHER_RECEIVE = 'fetch_weather_receive';
+
+export function receiveWeather(payload) {
+  return {
+    type: FETCH_WEATHER_RECEIVE,
+    payload,
+  };
+}
 
 export function fetchWeather(city) {
-  const url = `${ROOT_URL}&q=${city},us`;
-  const request = axios.get(url);
-
-  return {
-    type: FETCH_WEATHER,
-    payload: request
+  return (dispatch, getState) => {
+    fetch(`${ROOT_URL}?q=${city},eg&units=metric&appid=${API_KEY}`)
+      .then(response => response.json())
+      .then(json => dispatch(receiveWeather(json)));
   };
 }
