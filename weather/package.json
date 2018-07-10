@@ -5,8 +5,8 @@
   "main": "index.js",
   "repository": "git@github.com:StephenGrider/ReduxSimpleStarter.git",
   "scripts": {
-    "build": "webpack",
-    "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
+    "build": "webpack --config ./webpack.config.js --mode development",
+    "start": "webpack-dev-server --config ./webpack.config.js --mode development",
     "lint": "eslint src --ext .js --ignore-path .gitignore --cache",
     "lint-fix": "yarn lint --fix"
   },
@@ -14,9 +14,10 @@
   "license": "ISC",
   "devDependencies": {
     "babel-core": "6",
-    "babel-loader": "6",
+    "babel-loader": "7",
     "babel-preset-react": "6",
     "webpack": "4",
+    "webpack-cli": "3",
     "webpack-dev-server": "3"
   },
   "dependencies": {
@@ -36,5 +37,11 @@
     "react-sparklines": "1.6.0",
     "redux": "4",
     "redux-thunk": "2"
+  },
+  "babel": {
+    "presets": [
+      "env",
+      "react"
+    ]
   }
 }
