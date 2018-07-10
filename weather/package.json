@@ -1,32 +1,40 @@
 {
-  "name": "redux-simple-starter",
+  "name": "react-tutorial-weather",
   "version": "1.0.0",
-  "description": "Simple starter package for Redux with React and Babel support",
+  "description": "Weather forecast tutorial using React and Redux",
   "main": "index.js",
   "repository": "git@github.com:StephenGrider/ReduxSimpleStarter.git",
   "scripts": {
-    "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js"
+    "build": "webpack",
+    "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
+    "lint": "eslint src --ext .js --ignore-path .gitignore --cache",
+    "lint-fix": "yarn lint --fix"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "babel-core": "^6.2.1",
-    "babel-loader": "^6.2.0",
-    "babel-preset-es2015": "^6.1.18",
-    "babel-preset-react": "^6.1.18",
-    "webpack": "^1.12.9",
-    "webpack-dev-server": "^1.14.0"
+    "babel-core": "6",
+    "babel-loader": "6",
+    "babel-preset-react": "6",
+    "webpack": "4",
+    "webpack-dev-server": "3"
   },
   "dependencies": {
-    "axios": "^0.8.1",
-    "babel-preset-stage-1": "^6.1.18",
-    "lodash": "^3.10.1",
-    "react": "^0.14.3",
-    "react-dom": "^0.14.3",
-    "react-google-maps": "^4.7.1",
-    "react-redux": "^4.0.0",
-    "react-sparklines": "^1.4.2",
-    "redux": "^3.0.4",
-    "redux-promise": "^0.5.0"
+    "babel-eslint": "8",
+    "babel-plugin-transform-runtime": "6",
+    "babel-preset-env": "1",
+    "eslint": "4",
+    "eslint-config-airbnb": "17",
+    "eslint-plugin-import": "2",
+    "eslint-plugin-jsx-a11y": "6",
+    "eslint-plugin-react": "7",
+    "cross-fetch": "2",
+    "lodash": "4",
+    "react": "15",
+    "react-dom": "15",
+    "react-redux": "5",
+    "react-sparklines": "1.6.0",
+    "redux": "4",
+    "redux-thunk": "2"
   }
 }
