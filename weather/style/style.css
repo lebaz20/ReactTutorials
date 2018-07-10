@@ -1,16 +1,20 @@
+/* center all cells */
 td, th {
   vertical-align: middle !important;
   text-align: center !important;
 }
 
+/* give some space above input*/
 .input-group {
   margin: 20px 0px;
 }
 
+/* charts need to have same size*/
 svg {
   height: 150px;
 }
 
+/* set map dimensions */
 td:first-of-type, td:first-of-type > div {
   height: 200px;
   width: 250px;
