@@ -36,7 +36,7 @@ Select a category
 All
             </option>,
             categories.map(category => (
-              <option value={category.id}>
+              <option key={category.id} value={category.id}>
                 {category.name}
               </option>
             )),

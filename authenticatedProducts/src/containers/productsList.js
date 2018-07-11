@@ -17,15 +17,17 @@ const ProductsList = ({ productsPerCategories, selectProduct }) => {
 
   return (
     <div>
-      {productsPerCategories.map(category => [
-        <h3>
+      {productsPerCategories.map(category => (
+        <div key={category.id}>
+          <h3>
 Category:
-          {category.name}
-        </h3>,
-        <ul className="list-group col-sm-4">
-          {renderList(category.products)}
-        </ul>,
-      ])
+            {category.name}
+          </h3>
+          <ul className="list-group col-sm-4">
+            {renderList(category.products)}
+          </ul>
+        </div>
+      ))
       }
     </div>
   );
