@@ -1,0 +1,48 @@
+{
+  "name": "react-tutorial-authenticated-products",
+  "version": "1.0.0",
+  "description": "Authenticated Products listing tutorial using React and Redux",
+  "main": "index.js",
+  "repository": "git@github.com:StephenGrider/ReduxSimpleStarter.git",
+  "scripts": {
+    "build": "webpack --config ./webpack.config.js --mode development",
+    "start": "webpack-dev-server --config ./webpack.config.js --mode development",
+    "lint": "eslint src --ext .js --ignore-path .gitignore --cache",
+    "lint-fix": "npm run lint -- --fix"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "6",
+    "babel-loader": "7",
+    "babel-preset-react": "6",
+    "webpack": "4",
+    "webpack-cli": "3",
+    "webpack-dev-server": "3"
+  },
+  "dependencies": {
+    "babel-eslint": "8",
+    "babel-plugin-transform-runtime": "6",
+    "babel-preset-env": "1",
+    "classnames": "^2.2.6",
+    "cross-fetch": "2",
+    "eslint": "4",
+    "eslint-config-airbnb": "17",
+    "eslint-plugin-import": "2",
+    "eslint-plugin-jsx-a11y": "6",
+    "eslint-plugin-react": "7",
+    "lodash": "4",
+    "react": "16",
+    "react-dom": "16",
+    "react-redux": "5",
+    "reactstrap": "^6.3.0",
+    "redux": "4",
+    "redux-thunk": "2"
+  },
+  "babel": {
+    "presets": [
+      "env",
+      "react"
+    ]
+  }
+}
