@@ -6,11 +6,13 @@ import ProductDetail from '../containers/productDetail';
 const PrivatePage = () => (
   <div>
     { localStorage && localStorage.getItem('jwt')
-      ? [
-        <CategoriesDropDown />,
-        <ProductsList />,
-        <ProductDetail />,
-      ]
+      ? (
+        <div>
+          <CategoriesDropDown />
+          <ProductsList />
+          <ProductDetail />
+        </div>
+      )
       : (
         <h4 className="bg-danger">
 Authentication is required to view this page.
