@@ -1,12 +1,12 @@
 import fetch from 'cross-fetch';
 
 const JWT = localStorage && localStorage.getItem('jwt') ? localStorage.getItem('jwt') : '';
-const ROOT_URL = 'http://localhost:5000';
+const ROOT_URL = 'http://localhost:5000/graphql';
 const getSettings = values => ({
   method: 'POST',
   headers: {
-    'content-type': 'application/json',
-    authorization: JWT,
+    'Content-Type': 'application/json',
+    'Authorization': JWT,
   },
   body: JSON.stringify(values),
 });
@@ -31,11 +31,11 @@ export function receiveProducts(payload) {
 
 export function fetchProducts(category) {
   let queryPayload;
-  if (category === 0) {
+  if (category === "0") {
     queryPayload = {
       query: '{ categories { id name products { id name price description } } }',
       variables: null,
-      operationName: 'getCategoriesProducts',
+      operationName: null,
     };
   } else {
     queryPayload = {
@@ -44,6 +44,7 @@ export function fetchProducts(category) {
       operationName: 'getCategoryProducts',
     };
   }
+  console.log(getSettings(queryPayload));
 
   return dispatch => fetch(ROOT_URL, getSettings(queryPayload))
     .then(response => response.json())
@@ -63,7 +64,7 @@ export function fetchCategories() {
   const queryPayload = {
     query: '{categories {id name }}',
     variables: null,
-    operationName: 'getCategories',
+    operationName: null,
   };
   return dispatch => fetch(ROOT_URL, getSettings(queryPayload))
     .then(response => response.json())

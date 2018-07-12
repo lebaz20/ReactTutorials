@@ -15,22 +15,45 @@ const ProductsList = ({ productsPerCategories, selectProduct }) => {
     </li>
   ));
 
-  return (
-    <div>
-      {productsPerCategories.map(category => (
-        <div key={category.id}>
-          <h3>
-Category:
-            {category.name}
-          </h3>
-          <ul className="list-group col-sm-4">
-            {renderList(category.products)}
-          </ul>
-        </div>
-      ))
+    if (productsPerCategories) {
+      if (productsPerCategories.categories) {
+        let categoryProducts = productsPerCategories.categories;
+        return (
+          <div>
+            {categoryProducts.map(category => (
+              <div key={category.id}>
+                <h3>Category:
+                  {category.name}
+                </h3>
+                <ul className="list-group col-sm-4">
+                  {renderList(category.products)}
+                </ul>
+              </div>
+            ))
+            }
+          </div>
+        );
+      } else if (productsPerCategories.category) {
+        let category = productsPerCategories.category;
+        return (
+          <div>
+              <div key={category.id}>
+                <h3>Category:
+                  {category.name}
+                </h3>
+                <ul className="list-group col-sm-4">
+                  {renderList(category.products)}
+                </ul>
+              </div>
+          </div>
+        );
+      } else {
+        return (
+          <div></div>
+        );
       }
-    </div>
-  );
+    }
+
 };
 
 function mapStateToProps({ productsPerCategories }) {
