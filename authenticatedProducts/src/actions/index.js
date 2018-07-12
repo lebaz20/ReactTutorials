@@ -44,7 +44,6 @@ export function fetchProducts(category) {
       operationName: 'getCategoryProducts',
     };
   }
-  console.log(getSettings(queryPayload));
 
   return dispatch => fetch(ROOT_URL, getSettings(queryPayload))
     .then(response => response.json())
