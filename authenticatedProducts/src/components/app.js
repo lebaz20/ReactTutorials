@@ -4,6 +4,7 @@ import PublicPage from './publicPage';
 import PrivatePage from './privatePage';
 import TabInnerContent from './tabInnerContent';
 import NavItemContent from './navItemContent';
+import LegacyNavBar from './legacyNavBar';
 
 class App extends Component {
   constructor(props) {
@@ -26,6 +27,7 @@ class App extends Component {
     const { activeTab } = this.state;
     return (
       <div>
+        <LegacyNavBar />
         <Nav tabs>
           <NavItemContent tabId="1" activeTabId={activeTab} toggle={tabId => this.toggle(tabId)} title="Public page" />
           <NavItemContent tabId="2" activeTabId={activeTab} toggle={tabId => this.toggle(tabId)} title="Private page" />

@@ -24,7 +24,7 @@
     "babel-eslint": "8",
     "babel-plugin-transform-runtime": "6",
     "babel-preset-env": "1",
-    "classnames": "^2.2.6",
+    "classnames": "2",
     "cross-fetch": "2",
     "eslint": "4",
     "eslint-config-airbnb": "17",
@@ -35,7 +35,7 @@
     "react": "16",
     "react-dom": "16",
     "react-redux": "5",
-    "reactstrap": "^6.3.0",
+    "reactstrap": "6",
     "redux": "4",
     "redux-thunk": "2"
   },
