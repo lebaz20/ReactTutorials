@@ -1,41 +1,34 @@
 import React from 'react';
-import { Nav, NavItem, NavLink } from 'reactstrap';
+import { Nav, NavLink } from 'reactstrap';
 
 const loggedIn = localStorage && localStorage.getItem('jwt');
 const LegacyNavBar = () => (
   <div>
-    <Nav horizontal='center'>
-      <NavItem>
-        <NavLink href="/">
+    <Nav>
+      <NavLink href="/">
 Home
-        </NavLink>
-      </NavItem>
-      <NavItem>
-        <NavLink href="/About">
+      </NavLink>
+      {'  '}
+      <NavLink href="/About">
 About
-        </NavLink>
-      </NavItem>
+      </NavLink>
+      {'  '}
       { loggedIn
         ? (
-          <div>
-            <NavItem>
-              <NavLink href="/User/Profile">
+          [
+            <NavLink key="profile" href="/User/Profile">
 Profile
-              </NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href="/User/Logout">
+            </NavLink>,
+            '  ',
+            <NavLink key="logout" href="/User/Logout">
 Logout
-              </NavLink>
-            </NavItem>
-          </div>
+            </NavLink>,
+          ]
         )
         : (
-          <NavItem>
-            <NavLink href="/User/Login">
+          <NavLink href="/User/Login">
 Login
-            </NavLink>
-          </NavItem>
+          </NavLink>
         )
         }
     </Nav>
