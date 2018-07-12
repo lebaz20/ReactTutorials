@@ -27,21 +27,23 @@ class CategoriesDropDown extends Component {
     const { categories } = this.props;
 
     return (
-      <select value={selectedCategory} onChange={event => this.onSelectChange(event)}>
-        <option value="select">
-Select a category
-        </option>
-        <option value={0}>
-All
-        </option>
-        {
-          categories && categories.categories && categories.categories.map(category => (
-            <option key={category.id} value={category.id}>
-              {category.name}
-            </option>
-          ))
-        }
-      </select>
+      <div className="form-group">
+        <select className="form-control" value={selectedCategory} onChange={event => this.onSelectChange(event)}>
+          <option value="select">
+  Select a category
+          </option>
+          <option value={0}>
+  All
+          </option>
+          {
+            categories && categories.categories && categories.categories.map(category => (
+              <option key={category.id} value={category.id}>
+                {category.name}
+              </option>
+            ))
+          }
+        </select>
+      </div>
     );
   }
 }

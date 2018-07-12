@@ -6,7 +6,7 @@ const getSettings = values => ({
   method: 'POST',
   headers: {
     'Content-Type': 'application/json',
-    'Authorization': JWT,
+    Authorization: JWT,
   },
   body: JSON.stringify(values),
 });
@@ -31,7 +31,7 @@ export function receiveProducts(payload) {
 
 export function fetchProducts(category) {
   let queryPayload;
-  if (category === "0") {
+  if (category === '0') {
     queryPayload = {
       query: '{ categories { id name products { id name price description } } }',
       variables: null,
@@ -44,7 +44,6 @@ export function fetchProducts(category) {
       operationName: 'getCategoryProducts',
     };
   }
-  console.log(getSettings(queryPayload));
 
   return dispatch => fetch(ROOT_URL, getSettings(queryPayload))
     .then(response => response.json())
