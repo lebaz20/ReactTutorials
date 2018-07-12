@@ -6,28 +6,28 @@ const LegacyNavBar = () => (
   <div>
     <Nav>
       <NavLink href="/">
-Home
+  Home -
       </NavLink>
       {'  '}
       <NavLink href="/About">
-About
+  About -
       </NavLink>
       {'  '}
       { loggedIn
         ? (
           [
             <NavLink key="profile" href="/User/Profile">
-Profile
+  Profile -
             </NavLink>,
             '  ',
             <NavLink key="logout" href="/User/Logout">
-Logout
+  Logout -
             </NavLink>,
           ]
         )
         : (
           <NavLink href="/User/Login">
-Login
+  Login
           </NavLink>
         )
         }

@@ -1,7 +1,7 @@
 import fetch from 'cross-fetch';
 
 const JWT = localStorage && localStorage.getItem('jwt') ? localStorage.getItem('jwt') : '';
-const ROOT_URL = 'http://localhost:5000/graphql';
+const ROOT_URL = 'http://localhost:5001/graphql';
 const getSettings = values => ({
   method: 'POST',
   headers: {
