@@ -15,7 +15,7 @@ const ProductsList = ({ productsPerCategories, selectProduct }) => {
     </li>
   ));
 
-  if (!productsPerCategories) {
+  if (productsPerCategories.length === 0) {
     return (<div />);
   }
   const categoryProducts = productsPerCategories.category
