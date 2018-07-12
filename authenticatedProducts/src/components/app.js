@@ -6,6 +6,7 @@ import TabInnerContent from './tabInnerContent';
 import NavItemContent from './navItemContent';
 import LegacyNavBar from './legacyNavBar';
 
+const loggedIn = localStorage && localStorage.getItem('jwt');
 class App extends Component {
   constructor(props) {
     super(props);
@@ -30,15 +31,18 @@ class App extends Component {
         <LegacyNavBar />
         <Nav tabs>
           <NavItemContent tabId="1" activeTabId={activeTab} toggle={tabId => this.toggle(tabId)} title="Public page" />
-          <NavItemContent tabId="2" activeTabId={activeTab} toggle={tabId => this.toggle(tabId)} title="Private page" />
+          {loggedIn ? <NavItemContent tabId="2" activeTabId={activeTab} toggle={tabId => this.toggle(tabId)} title="Private page" /> : null}
         </Nav>
         <TabContent activeTab={activeTab}>
           <TabInnerContent tabId="1">
             <PublicPage />
           </TabInnerContent>
-          <TabInnerContent tabId="2">
-            <PrivatePage />
-          </TabInnerContent>
+          {loggedIn ? (
+            <TabInnerContent tabId="2">
+              <PrivatePage />
+            </TabInnerContent>
+          )
+            : null}
         </TabContent>
       </div>
     );
