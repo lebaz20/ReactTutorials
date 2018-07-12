@@ -12,9 +12,7 @@ const store = createStore(reducers, composeEnhancers(applyMiddleware(thunkMiddle
 ReactDom.render(
   <Provider store={store}>
     <BrowserRouter>
-      <div>
-        <Route path="/products" component={App} />
-      </div>
+      <Route path="/products" component={App} />
     </BrowserRouter>
   </Provider>,
   document.querySelector('.container'),
